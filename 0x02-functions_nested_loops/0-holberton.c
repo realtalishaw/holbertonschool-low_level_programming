@@ -10,7 +10,7 @@
 
 int main(void)
 {
-	char H [] = "Holberton";
+	char H[] = "Holberton";
 	int i;
 
 	for (i = 0; H[i] != 0; i++)
