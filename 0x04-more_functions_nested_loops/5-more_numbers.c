@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * more_numbers - main
+ * more_numbers - main more words
  *
  * Return: dfja
  */
