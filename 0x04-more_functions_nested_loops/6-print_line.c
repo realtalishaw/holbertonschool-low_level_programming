@@ -18,5 +18,5 @@ void print_line(int n)
 		else
 			break;
 	}
-	putchar ('\n');
+	_putchar('\n');
 }
