@@ -16,16 +16,18 @@ void print_diagsums(int *a, int size)
 	sum = 0;
 	total = 0;
 
-	for (i = 0; i < size; i++)
+	for (i = 0; i < size;)
 	{
 		sum += a[n];
 		n += size + 1;
+		i++;
 	}
 	n = size - 1;
-	for (i = 0; i < size; i++)
+	for (i = 0; i < size;)
 	{
 		total += a[n];
 		n += size - 1;
+		i++;
 	}
 	printf("%d, %d\n", sum, total);
 }
