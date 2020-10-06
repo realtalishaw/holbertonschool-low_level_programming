@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * _strchr - fdskhkj
@@ -12,8 +13,9 @@ char *_strchr(char *s, char c)
 {
 	int i;
 
-	for (i = 0; s[i]; s++)
-		if (s[i] == c)
-			return (s);
+	if (s != NULL)
+		for (i = 0; s[i]; s++)
+			if (s[i] == c)
+				return (s);
 	return (s);
 }
