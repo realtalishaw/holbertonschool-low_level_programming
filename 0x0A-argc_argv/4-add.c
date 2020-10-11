@@ -22,18 +22,18 @@ int main(int argc, char *argv[])
 		{
 			for (n = 0; argv[i][n] != 0; n++)
 			{
-				if(!(isdigit(argv[i][n])))
+				if (!(isdigit(argv[i][n])))
 				{
 					printf("Error\n");
 					return (1);
 				}
-			sum += atoi(*(argv + i));
+				sum += atoi(*(argv + i));
 			}
 		}
 	}
 	else
 	{
-		printf("0");
+		printf("0\n");
 		return (0);
 	}
 	printf("%d\n", sum);
