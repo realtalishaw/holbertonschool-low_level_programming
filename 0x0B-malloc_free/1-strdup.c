@@ -13,6 +13,7 @@
 char *_strdup(char *str)
 {
 	char *str2;
+	int i;
 
 	if (str == NULL)
 		return (NULL);
@@ -24,7 +25,10 @@ char *_strdup(char *str)
 		printf("failed to allocate memory");
 		return (NULL);
 	}
-	strcpy(str2, str);
+	for (i = 0; str[i] != 0; i++)
+	{
+		str2[i] = str[i];
+	}
 	return (str2);
 
 }
