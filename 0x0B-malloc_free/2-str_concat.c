@@ -25,22 +25,22 @@ char *str_concat(char *s1, char *s2)
 		s2 = "";
 	}
 
-	both = malloc((sizeof(s1) + sizeof(s2)));
+	both = malloc((sizeof(s1) + sizeof(s2) + 1));
 
 	if (both == NULL)
 	{
-		return(NULL);
+		return (NULL);
 	}
 
 
 	for (i = 0; s1[i] != 0; i++)
- 	{
- 		both[i] = s1[i];
+	{
+		both[i] = s1[i];
 	}
 	for (j = 0; s2[j] != 0; j++)
 	{
 		both[i + j] = s2[j];
 	}
 
- 	return (both);
+	return (both);
 }
