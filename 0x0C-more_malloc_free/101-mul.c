@@ -15,17 +15,24 @@ int main(int argc, char *argv[])
 {
 	if (argc == 3)
 	{
-		if (!(isdigit(argv[1][2])))
-		{
-			printf("Error\n");
-			exit(98);
-		}
-		printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
+		printf("%d\n", _atoi(argv[1]) * _atoi(argv[2]));
 	}
+
 	else
 	{
 		printf("Error\n");
 		exit(98);
 	}
 	return (0);
+}
+
+int _atoi(char* str)
+{
+	int res = 0;
+	int i;
+
+	for (i = 0; str[i] != 0; ++i)
+		res = res * 10 + str[i] - '0';
+
+	return res;
 }
