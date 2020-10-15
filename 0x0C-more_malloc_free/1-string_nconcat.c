@@ -26,15 +26,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	for (len = 0; s2[len]; len++)
 		;
-	for (len2 = 0; s1[len2]; len2++)
-		;
+/*	for (len2 = 0; s1[len2]; len2++)
+	; */
 
 	if (len > n)
 	{
 		len = n;
 	}
 
-	both = malloc(len2 + (len + 1));
+	both = malloc(*s1 + (len + 1));
 
 	if (both == NULL)
 		return (NULL);
