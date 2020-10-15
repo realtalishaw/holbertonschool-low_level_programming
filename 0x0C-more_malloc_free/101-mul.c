@@ -18,14 +18,14 @@ int main(int argc, char *argv[])
 		if (!(isdigit(argv[1][2])))
 		{
 			printf("Error\n");
-			exit (98);
+			exit(98);
 		}
 		printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
 	}
 	else
 	{
 		printf("Error\n");
-		exit (98);
+		exit(98);
 	}
 	return (0);
 }
