@@ -31,7 +31,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (i = 0; s1[i] != 0; i++)
 		both[i] = s1[i];
 
-	both = realloc(both, sizeof(char) * n);
+	both = _realloc(both, sizeof(char) * n);
 
 	if (both == NULL)
 		return (NULL);
