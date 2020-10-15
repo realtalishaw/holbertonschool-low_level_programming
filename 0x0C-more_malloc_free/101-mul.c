@@ -26,7 +26,14 @@ int main(int argc, char *argv[])
 	return (0);
 }
 
-int _atoi(char* str)
+/**
+ * _atoi - fdss
+ * @str: dss
+ *
+ * Return: dsd
+ */
+
+int _atoi(char *str)
 {
 	int res = 0;
 	int i;
@@ -34,5 +41,5 @@ int _atoi(char* str)
 	for (i = 0; str[i] != 0; ++i)
 		res = res * 10 + str[i] - '0';
 
-	return res;
+	return (res);
 }
