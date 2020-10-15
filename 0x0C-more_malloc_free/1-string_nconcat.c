@@ -34,7 +34,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		len = n;
 	}
 
-	both = malloc(*s1 + (len + 1));
+	both = malloc(len2 + (len + 1));
 
 	if (both == NULL)
 		return (NULL);
