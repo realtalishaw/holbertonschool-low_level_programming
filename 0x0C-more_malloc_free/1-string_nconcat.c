@@ -17,24 +17,21 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	int i;
 	unsigned int j;
 
-	both = malloc(*s1);
-
-	if (both == NULL)
-		return (NULL);
-
 	if (s1 == NULL)
+	{
 		s1 = "";
+	}
 
 	if (s2 == NULL)
 		s2 = "";
 
-	for (i = 0; s1[i] != 0; i++)
-		both[i] = s1[i];
-
-	both = _realloc(both, sizeof(char) * n);
+	both = malloc(*s1 + sizeof(char) * n + 1);
 
 	if (both == NULL)
 		return (NULL);
+
+	for (i = 0; s1[i] != 0; i++)
+		both[i] = s1[i];
 
 	for (j = 0; j <= n; j++)
 		both[i + j] = s2[j];
