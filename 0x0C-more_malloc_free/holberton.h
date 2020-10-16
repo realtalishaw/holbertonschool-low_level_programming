@@ -9,4 +9,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char *_memcpy(char *dest, char *src, unsigned int n);
 int _printf(const char *format, ...);
 int _atoi(char* str);
+int _isdigit(int c);
+
 #endif
