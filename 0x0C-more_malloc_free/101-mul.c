@@ -102,8 +102,7 @@ char *mul(char *num1, char *num2)
 	for (len1--; len1 >= 0; len1--)
 	{
 /* variables hold the number values of num1 & num2 */
-		i = num1[len1] - '0';
-		y = 0;
+		i = num1[len1] - '0', y = 0;
 		for (len2 = _strlen(num2) - 1; len2 >= 0; len2--)
 		{
 			j = num2[len2] - '0';
@@ -125,7 +124,8 @@ char *mul(char *num1, char *num2)
 	if (!a)
 		_putchar(sum[n] + '0');
 	_putchar('\n');
-	free(sum), return (0);
+	free(sum);
+	return (0);
 }
 
 
