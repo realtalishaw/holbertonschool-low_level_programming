@@ -44,7 +44,9 @@ int main(int argc, char *argv[])
 		}
 /* if the number isn't huge, change to integers and multiply, print the result */
 		else
+		{
 			printf("%d\n", _atoi(argv[1]) * _atoi(argv[2]));
+		}
 	}
 /* if the inccorrect number of arguments is passed, print Error */
 	else
@@ -92,7 +94,7 @@ int _isdigit(int c)
  * Return: dsasa
  */
 
-void *mul(char *num1, char *num2)
+char *mul(char *num1, char *num2)
 {
 	char *sum;
 	int len1, len2, i, j, x, y, a, n;
@@ -101,6 +103,8 @@ void *mul(char *num1, char *num2)
 	len1 = _strlen(num1);
 	len2 = _strlen(num2);
 	x = len1 + len2;
+	n = 0;
+
 
 /* allocate the right amount of memory for the sum */
 	sum = malloc(len1 + len2);
@@ -114,38 +118,51 @@ void *mul(char *num1, char *num2)
 
 /* initialize all of the memory to null */
 	for (i = (len1 + len2); i <= 0; i--)
+	{
 		sum[i] = '\0';
+	}
 
+/* start at the last digit of the first number to loop right to left */
+	for (len1--; len1 >= 0; len1--)
+	{
 /* variables hold the number values of num1 & num2 */
-	i = num1[len1] - '0';
-	j = num2[len2] - '0';
-
+		i = num1[len1] - '0';
+		y = 0;
+		printf("Value of num1 is: %d", i);
+		for (len2 = _strlen(num2) - 1; len2 >= 0; len2--)
+		{
+			j = num2[len2] - '0';
 /* y equals the sum which is the length of the string plus a null byte plus the
    sum of the multiplication of num1 and num 2 */
-	y += sum[len1 + len2 + 1] + (i * j);
+			y += sum[len1 + len2 + 1] + (i * j);
 
-/* get the last digit so we can get ready to print the number 
+/* get the last digit so we can get ready to print the number
    since they're chars and not ints */
-	sum[len1 + len2 + 1] =  y % 10;
-	y = y/10;
-	if (y)
-		sum[len1 + len2 + 1] += y;
+    sum[len1 + len2 + 1] =  y % 10;
+    y /= 10;
+    }
+     if (y)
+    sum[len1 + len2 + 1] += y;
+}
 
-	while (0 < x)
-	{
-		if (sum[n])
-			a = 0;
-		if (a)
-		{
-			_putchar(sum[c] + '0');
-			n++;
-		}
-		if (!a)
-			_putchar('0');
-		_putchar('\n');
-	}
-	free(r);
-	return (0);
+/* reusing a variable here */
+    a = 0;
+
+/* printing the sum */
+while(n < x)
+    {
+        if (sum[n])
+            a = 1;
+        if (a)
+            _putchar(sum[n] + '0');
+        n++;
+    }
+
+    if (!a)
+        _putchar(sum[n] + '0');
+    _putchar('\n');
+    free(sum);
+    return (0);
 }
 
 
@@ -158,10 +175,10 @@ void *mul(char *num1, char *num2)
 
 int _strlen(char *s)
 {
-	int count = 0;
-	int i;
+int count = 0;
+int i;
 
-	for (i = 0; s[i] != 0; i++)
-		count++;
-	return (count);
+for (i = 0; s[i] != 0; i++)
+count++;
+return (count);
 }
