@@ -13,23 +13,25 @@
 int main(int argc, char *argv[])
 {
 	int i, len1, len2;
-/* get the lengths of both the passed argument strings */
-	len1 = _strlen(argv[1]);
-	len2 = _strlen(argv[2]);
-/* verify the argument strings only contain numbers */
-	for (i = 0; argv[1][i] != 0; i++)
-	{
-		if (_isdigit(argv[1][i]) == 0)
-			printf("Error\n"), exit(98);
-	}
-	for (i = 0; argv[2][i] != 0; i++)
-	{
-		if (_isdigit(argv[2][i]) == 0)
-			printf("Error\n"), exit(98);
-	}
 /* check if the correct number of arguments is passed */
-	if (argc == 3)
+	if (argc != 3)
+		printf("Error\n"), exit(98);
+	else if (argc == 3)
 	{
+		/* get the lengths of both the passed argument strings */
+		len1 = _strlen(argv[1]);
+		len2 = _strlen(argv[2]);
+		/* verify the argument strings only contain numbers */
+		for (i = 0; argv[1][i] != 0; i++)
+		{
+			if (_isdigit(argv[1][i]) == 0)
+				printf("Error\n"), exit(98);
+		}
+		for (i = 0; argv[2][i] != 0; i++)
+		{
+			if (_isdigit(argv[2][i]) == 0)
+				printf("Error\n"), exit(98);
+		}
 /* check if the number is a big number to multiply a different way */
 		if (len1 >= 6 || len2 >= 6)
 			mul(argv[1], argv[2]);
@@ -37,12 +39,7 @@ int main(int argc, char *argv[])
 		else
 			printf("%d\n", _atoi(argv[1]) * _atoi(argv[2]));
 	}
-/* if the inccorrect number of arguments is passed, print Error */
-	else
-	{
-		printf("Error\n");
-		exit(98);
-	}
+
 	return (0);
 }
 
