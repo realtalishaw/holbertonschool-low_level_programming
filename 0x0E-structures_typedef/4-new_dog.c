@@ -65,7 +65,6 @@ char *_strdup(char *str)
 
 	for (n = 0; str[n] != 0; n++)
 		;
-
 	str2 = malloc(sizeof(char) * (n + 1));
 
 	if (str2 == NULL)
@@ -73,7 +72,7 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	for (i = 0; i < n; i++)
+	for (i = 0; str[i]; i++)
 	{
 		*(str2 + i) = *(str + i);
 	}
