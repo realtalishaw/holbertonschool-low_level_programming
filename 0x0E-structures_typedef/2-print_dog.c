@@ -14,7 +14,7 @@ void print_dog(struct dog *d)
 
 	if (!d)
 		return;
-	else
+	else if (d)
 	{
 		if (d->name == NULL)
 			d->name = "(nil)", printf("Name: %s\n", d->name);
