@@ -8,7 +8,7 @@
  * Return: fjdkfjds
  */
 
-int (*get_op_func(char *s))(int a, int b)
+int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
 		{"+", op_add},
@@ -22,10 +22,13 @@ int (*get_op_func(char *s))(int a, int b)
 
 	i = 0;
 
-	while (ops[i].op != NULL && ops[i].op != s)
+	while (i < 5)
 	{
+		if (*(ops[i].op) == *s)
+		{
+			return(ops[i].f);
+		}
 		i++;
 	}
-
-	return (ops[i].f);
+	return (0);
 }
