@@ -5,12 +5,15 @@
  * @n: fjdksf
  * @m: jfkdfflkd
  *
- * Result: fjkjdfs
+ * Return: fjkjdfs
  */
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	return (count_bits(n^m));
+	if (n == 0)
+		return (0);
+
+	return (count_bits(n ^ m));
 
 
 }
@@ -18,9 +21,8 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 /**
  * count_bits - fjkdkljfs
  * @n: fjdkfs
- * @m: fjkdksfs
  *
- * Result: fjdksjs
+ * Return: fjdksjs
  */
 
 int count_bits(int n)
