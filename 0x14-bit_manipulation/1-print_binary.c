@@ -19,7 +19,7 @@ xy:
 	{
 		if ((n & range) == 0)
 		{
-			range = range>>1;
+			range = range >> 1;
 			goto xy;
 		}
 		else
