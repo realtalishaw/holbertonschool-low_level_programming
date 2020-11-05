@@ -10,7 +10,7 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned result;
+	unsigned int  result;
 
 	result =  (n >> index) & 1;
 
