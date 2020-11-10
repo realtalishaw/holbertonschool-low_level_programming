@@ -10,28 +10,28 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	char *buff;
 	int fd;
-	int i;
+	int i, w;
 
 	if (!filename)
 		return (-1);
 
+	fd = open(filename, O_RDWR | O_CREAT | O_TURNC, 0600);
 
-	buff = malloc(sizeof(text_content));
-
-	if (!buff)
+	if (fd == -1)
 		return (-1);
 
-	fd = open(filename, O_RDWR | O_CREAT, 0600);
+	if (!text_content)
+		return (1);
 
-	for (i = 0; text_content[i] != 0; i++)
-	{
-		buff[i] = text_content[i];
-	}
-	buff[i + 1] = '\0';
+	for (i = 0; text_content[i]; i++)
+		;
 
-	write(fd, buff, *text_content);
+	w = write(fd, text_content, i);
+	close(fd);
+
+	if (w == -1)
+		return (-1);
 
 
 	return (1);
