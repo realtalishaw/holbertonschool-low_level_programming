@@ -10,29 +10,26 @@
 
 int append_text_to_file(const char *filename, char *text_content)
 {
-	char *buff;
 	int fd;
-	int i;
+	int i, w;
 
 	if (!filename)
 		return (-1);
 
 
-	buff = malloc(sizeof(text_content));
+	fd = open(filename, O_RDWR | O_APPEND);
 
-	if (!buff)
+	if (fd == -1)
 		return (-1);
 
-	fd = open(filename, O_RDWR | O_APPEND );
-
 	for (i = 0; text_content[i] != 0; i++)
-	{
-		buff[i] = text_content[i];
-	}
-	buff[i + 1] = '\0';
+		;
 
-	write(fd, buff, *text_content);
 
+	w = write(fd, text_content, i);
+
+	if (w == -1)
+		return (-1);
 
 	return (1);
 }
