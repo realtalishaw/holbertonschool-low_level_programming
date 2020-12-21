@@ -11,10 +11,10 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buff;
-	int fd, i;
-	int r;
+	int fd;
+	int r, w;
 
-	buff = malloc(sizeof(letters));
+	buff = malloc(sizeof(char) * letters);
 
 	if (!buff)
 		return (0);
@@ -24,26 +24,22 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	fd = open(filename, O_RDONLY, 0);
 	if (fd == -1)
+	{
+		free(buff);
 		return (0);
-
+	}
 	r = read(fd, buff, letters);
+	if (r == -1)
+	{
+		free(buff);
+		return (0);
+	}
 
-	for (i = 0; buff[i] != 0; i++)
-		_putchar(buff[i]);
+	w = write(STDOUT_FILENO, buff, r);
 
+	if (r != w)
+		return (0);
+	free(buff);
+	close(fd);
 	return (r);
-}
-
-#include <unistd.h>
-
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
 }
