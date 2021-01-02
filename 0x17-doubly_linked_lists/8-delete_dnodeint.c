@@ -19,7 +19,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	if (!*head)
 		return (-1);
 
-	while(oldnode)
+	while (oldnode)
 	{
 		if (i == index)
 		{
