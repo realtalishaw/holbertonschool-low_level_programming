@@ -20,7 +20,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (!key || strcmp(key, ""))
 		return (0);
 	idx = key_index((unsigned char *)key, ht->size);
-	if (!ht->array[idx])
+	if (ht->array[idx])
 	{
 		if (strcmp(key, ht->array[idx]->key) == 0)
 		{
