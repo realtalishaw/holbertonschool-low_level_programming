@@ -2,9 +2,9 @@
 
 /**
  * hash_table_set - fdssd
- * ht: kfjdskjfsd
- * key: fkdjksds
- * value: fkjldfls
+ * @ht: kfjdskjfsd
+ * @key: fkdjksds
+ * @value: fkjldfls
  *
  * Return: kfjds
  */
@@ -28,7 +28,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (!ht->array[idx])
 	{
-		if(strcmp(key, ht->array[idx]->key) == 0)
+		if (strcmp(key, ht->array[idx]->key) == 0)
 		{
 			ht->array[idx]->value = strdup(value);
 			return (1);
